@@ -3,16 +3,16 @@ import { useGetShoppingCardProductsQuery } from "@/lib/services/shopping-basked"
 import { useEffect } from "react";
 
 export default function Basket() {
-  const { data, error, isLoading } = useGetShoppingCardProductsQuery();
-  console.log(data);
-  const listId = data?.map((item) => <div key={item.Id}>{item.Id}</div>);
+  // const { data, error, isLoading } = useGetShoppingCardProductsQuery();
+  // console.log(data);
+  // const listId = data?.map((item) => <div key={item.Id}>{item.Id}</div>);
 
-  useEffect(() => {}, [isLoading]);
+  // useEffect(() => {}, [isLoading]);
 
   return (
     <div>
       <h2>Корзина</h2>
-      {!isLoading && <div>{listId}</div>}
+      {/* {!isLoading && <div>{listId}</div>} */}
     </div>
   );
 }

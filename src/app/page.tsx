@@ -4,6 +4,9 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <h1>Главная</h1>
+      <form>
+        <input />
+      </form>
     </main>
   );
 }
