@@ -1,3 +1,3 @@
 export default function Stocks() {
-  return <h2>Stocks</h2>;
+  return <h2>Акции</h2>;
 }
