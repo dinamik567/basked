@@ -1,0 +1,10 @@
+.productListCard {
+  width: 70%;
+  margin: 1.5rem;
+  min-height: 100vh;
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-items: center;
+  align-items: end;
+}

@@ -1,22 +1,22 @@
-export interface CardProductI {
+export interface ProductCardI {
   Id: number;
   Name: string;
   Description: string;
   Quantity: number;
   Unit: string;
-  Currency: string;
+  Сurrency: string;
   Price: number;
   DiscountedPrice: number;
-  Images: ImageOfCardProductI[];
+  Images: ImageOfProductCardI[];
 }
 
-export interface ImageOfCardProductI {
+export interface ImageOfProductCardI {
   FileName: string;
   FileExtension: string;
   Image: string;
 }
 
-export interface InfoCardProductI {
+export interface InfoProductCardI {
   ProductId: number;
   UserGuid: string;
   Value?: number;
