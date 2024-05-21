@@ -1,8 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Установлен Docker - https://www.docker.com/get-started/
+Команды для запуска:
+1 Скачать образ по ссылке https://disk.yandex.ru/d/hiD-kkT4DKP8fg
+2 Перейти в папку в которой находиться файл hawkingbros.tar
+3 Выполнить команду docker load -i hawkingbros.tar
+4 Выполнить команду docker run -p 8080:80
+hawkingbros:latest
+5 Открыть Swagger http://localhost:8080/swagger/index.html
 
-## Getting Started
-
-First, run the development server:
+Команды для запуска
 
 ```bash
 npm run dev
@@ -14,23 +19,25 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+API предоставляет функции для работы с корзиной
+покупателя, после запуска требуется выполнить метод POST
+/Admin/create, который сгенерирует случайную корзину, на
+вход данный метод просит указать количество товаров в
+корзине.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#Реализовал тестовое задание
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+В рамках реализации тестового задания необходимо:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Развернуть докер-образ в локальном окружении
+2. Реализовать header сайта, в котором должно быть не менее 5 статичных элементов навигации и не менее одного выпадающего списка. Одним из элементов навигации должна быть корзина интернет-магазина
+3. Реализовать интерфейс корзины интернет-магазина
+4. Получить данные о корзине покупателя, используя API сервиса
+5. Реализовать вывод данных корзины пользователя, используя полученные по API данные
+6. Отображение списка товаров должно быть реализовано в виде таблицы, где каждая строка представляет запись об одной единице товара и ее количестве в корзине, стоимости одной единицы товара. У каждого товара должно быть фото
+7. Должен быть реализован вывод общей стоимости корзины и статичная кнопка «оформить заказ»
+   Интерфейс корзины должен предусматривать возможность:
+8. Изменения количества каждой единицы товара
+9. Удаления каждой единицы товара из корзины
+10. Очистки всей корзины
+    Для реализации можно использовать любой UI-KIT/библиотеку, либо реализовать интерфейс без их использования.
