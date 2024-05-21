@@ -1,5 +1,7 @@
+"use client";
 import Link from "next/link";
 import styles from "./styles.module.css";
+import { NavLink } from "../nav-link/nav-link";
 
 export function Header() {
   return (
@@ -9,8 +11,15 @@ export function Header() {
       </div>
       <nav>
         <ul className={styles.navList}>
+          <li className={styles.navItem}>
+            <NavLink styleActive={styles.navItemActive} href="/">
+              Главная
+            </NavLink>
+          </li>
           <li className={`${styles.navItem} ${styles.dropdown}`}>
-            <Link href="#">Каталог</Link>
+            <NavLink href="#" styleActive={styles.navItemActive}>
+              Каталог
+            </NavLink>
             <div className={styles.dropdownContent}>
               <Link href="/catalog/food">Корма для животных</Link>
               <Link href="/catalog/care">Средства ухода</Link>
@@ -19,19 +28,29 @@ export function Header() {
             </div>
           </li>
           <li className={styles.navItem}>
-            <Link href="/orders">Заказы</Link>
+            <NavLink href="/orders" styleActive={styles.navItemActive}>
+              Заказы
+            </NavLink>
           </li>
           <li className={styles.navItem}>
-            <Link href="/favorites">Избраное</Link>
+            <NavLink href="/favorites" styleActive={styles.navItemActive}>
+              Избраное
+            </NavLink>
           </li>
           <li className={styles.navItem}>
-            <Link href="/stocks">Акции</Link>
+            <NavLink href="/stocks" styleActive={styles.navItemActive}>
+              Акции
+            </NavLink>
           </li>
           <li className={styles.navItem}>
-            <Link href="/contacts">Контакты</Link>
+            <NavLink href="/contacts" styleActive={styles.navItemActive}>
+              Контакты
+            </NavLink>
           </li>
           <li className={styles.navItem}>
-            <Link href="/basket">Корзина</Link>
+            <NavLink href="/basket" styleActive={styles.navItemActive}>
+              Корзина
+            </NavLink>
           </li>
         </ul>
       </nav>

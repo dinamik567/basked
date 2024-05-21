@@ -1,5 +1,3 @@
-/* ProductCard.module.css */
-
 .card {
   display: flex;
   flex-direction: column;
@@ -68,4 +66,58 @@
 .originalPrice {
   text-decoration: line-through;
   color: #999;
+}
+
+.controlPanel {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #eaeaea;
+  background-color: #f9f9f9;
+  margin-top: 10px;
+}
+
+.controlPanelWrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.increaseButton,
+.decreaseButton,
+.deleteButton {
+  background-color: #0070f3;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  margin: 0 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.increaseButton:hover,
+.decreaseButton:hover,
+.deleteButton:hover {
+  background-color: #005bb5;
+}
+
+.deleteButton {
+  background-color: #e53e3e;
+}
+
+.deleteButton:hover {
+  background-color: #c53030;
+}
+
+.quantity {
+  margin: 0;
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  font-size: 16px;
 }

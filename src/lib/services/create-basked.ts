@@ -9,10 +9,11 @@ export const createBaskedApi = createApi({
     baseUrl: BASE_URL_CREATE_BASKED,
   }),
   endpoints: (builder) => ({
-    createShoppingBasked: builder.query<number, void>({
+    createShoppingBasked: builder.mutation<void, number>({
       query: (quantity) => ({
         url: "create",
         method: "POST",
+        body: { value: quantity },
       }),
     }),
   }),
@@ -20,4 +21,4 @@ export const createBaskedApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useCreateShoppingBaskedQuery } = createBaskedApi;
+export const { useCreateShoppingBaskedMutation } = createBaskedApi;

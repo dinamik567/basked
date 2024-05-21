@@ -39,6 +39,10 @@
   color: orange;
 }
 
+.navItemActive {
+  color: orange;
+}
+
 /* Dropdown Styles */
 .dropdownContent {
   display: none;

@@ -22,10 +22,10 @@ export interface InfoProductCardI {
   Value?: number;
 }
 
-export interface HeaderSideI {
+export interface HeaderSiteI {
   LogoImg: string;
   UserName: string;
-  UserGuid: string;
+  UsedGuid: string;
 }
 
 export interface BasketSummaryI {

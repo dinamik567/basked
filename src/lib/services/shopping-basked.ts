@@ -1,7 +1,7 @@
 // Need to use the React-specific entry point to import createApi
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { ProductCardI } from "@/types/types";
-import { HeaderSideI, InfoProductCardI, BasketSummaryI } from "@/types/types";
+import { HeaderSiteI, InfoProductCardI, BasketSummaryI } from "@/types/types";
 import { BASE_URL_SHOPPING_CART } from "@/settings";
 
 // Define a service using a base URL and expected endpoints
@@ -12,7 +12,7 @@ export const shippingProductApi = createApi({
   }),
   tagTypes: ["Products"],
   endpoints: (builder) => ({
-    getHeaderSite: builder.query<HeaderSideI, void>({
+    getHeaderSite: builder.query<HeaderSiteI, void>({
       query: () => "header",
     }),
     getShoppingCardProducts: builder.query<ProductCardI[], void>({
@@ -20,7 +20,7 @@ export const shippingProductApi = createApi({
       providesTags: ["Products"],
     }),
     getInfoShoppingBasked: builder.query<BasketSummaryI, void>({
-      query: () => "products",
+      query: () => "baskedsummary",
       providesTags: ["Products"],
     }),
     clearShoppingBasket: builder.mutation<void, void>({
@@ -71,6 +71,7 @@ export const shippingProductApi = createApi({
 export const {
   useGetHeaderSiteQuery,
   useGetShoppingCardProductsQuery,
+  useGetInfoShoppingBaskedQuery,
   useClearShoppingBasketMutation,
   useDeleteShoppingCardProductMutation,
   useIncreaseQuantityCardProductMutation,

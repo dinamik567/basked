@@ -1,17 +1,20 @@
 import styles from "./styles.module.css";
-import { useEffect } from "react";
-import { useGetShoppingCardProductsQuery } from "@/lib/services/shopping-basked";
+import {
+  useGetShoppingCardProductsQuery,
+  useGetHeaderSiteQuery,
+} from "@/lib/services/shopping-basked";
 import { ProductCard } from "../product-card/product-card";
 
 export function ProductList() {
-  const { data, error, isLoading } = useGetShoppingCardProductsQuery();
+  const { data, isLoading } = useGetShoppingCardProductsQuery();
 
-  useEffect(() => {}, [isLoading, data]);
+  const { data: dataHeader, isLoading: headerIsLoading } =
+    useGetHeaderSiteQuery();
 
-  console.log(data?.[0].Сurrency);
   return (
     <section className={styles.productListCard}>
       {!isLoading &&
+        !headerIsLoading &&
         data?.map((item) => {
           return (
             <ProductCard
@@ -25,6 +28,7 @@ export function ProductList() {
               Price={item.Price}
               DiscountedPrice={item.DiscountedPrice}
               Images={item.Images}
+              HeaderSite={dataHeader}
             />
           );
         })}
